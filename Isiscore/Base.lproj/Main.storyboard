@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -108,6 +109,40 @@
             </objects>
             <point key="canvasLocation" x="768.79999999999995" y="-215.44227886056973"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="nin-B1-08h">
+            <objects>
+                <viewController storyboardIdentifier="SplashScreenVC" id="dvI-Lz-sPi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WZT-jV-hqy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashImage" translatesAutoresizingMaskIntoConstraints="NO" id="dwe-Y9-dTy">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISISCORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECc-Qs-PGu">
+                                <rect key="frame" x="94" y="175" width="187" height="49"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="41"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ECc-Qs-PGu" firstAttribute="centerX" secondItem="VCC-sT-YKf" secondAttribute="centerX" id="5hu-Kj-7Ve"/>
+                            <constraint firstItem="dwe-Y9-dTy" firstAttribute="leading" secondItem="VCC-sT-YKf" secondAttribute="leading" id="6FZ-o6-Za7"/>
+                            <constraint firstItem="ECc-Qs-PGu" firstAttribute="top" secondItem="VCC-sT-YKf" secondAttribute="top" constant="155" id="9Aa-IA-dvS"/>
+                            <constraint firstItem="dwe-Y9-dTy" firstAttribute="top" secondItem="VCC-sT-YKf" secondAttribute="top" id="c10-z8-xRv"/>
+                            <constraint firstItem="VCC-sT-YKf" firstAttribute="bottom" secondItem="dwe-Y9-dTy" secondAttribute="bottom" id="dz1-74-rXg"/>
+                            <constraint firstItem="VCC-sT-YKf" firstAttribute="trailing" secondItem="dwe-Y9-dTy" secondAttribute="trailing" id="sJ0-TD-roX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VCC-sT-YKf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QSP-Wn-woe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="369" y="-958"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="p4s-My-txU">
             <objects>
@@ -125,4 +160,7 @@
             <point key="canvasLocation" x="-183" y="-215"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splashImage" width="640" height="1136"/>
+    </resources>
 </document>

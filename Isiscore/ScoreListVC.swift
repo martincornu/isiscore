@@ -19,6 +19,9 @@ class ScoreListVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let splashScreenVC: UIViewController! = self.storyboard?.instantiateViewController(withIdentifier: "SplashScreenVC")
+        present(splashScreenVC, animated: true, completion: nil)
+        
         //Get data in JSON
         if let url = URL(string: "https://api.myjson.com/bins/hmyao") {
             //Background thread
@@ -46,6 +49,7 @@ class ScoreListVC: UITableViewController {
                 DispatchQueue.main.async {
                     //UI modifications
                     self.gamesTableView.reloadData()
+                    splashScreenVC.dismiss(animated: true, completion: nil)
                 }
             }
         }
