@@ -11,4 +11,9 @@ import UIKit
 
 class ScoreCell: UITableViewCell {
     
+    @IBOutlet weak var currentTime: UILabel!
+    @IBOutlet weak var homeTeam: UILabel!
+    @IBOutlet weak var homeTeamScore: UILabel!
+    @IBOutlet weak var awayTeamScore: UILabel!
+    @IBOutlet weak var awayTeam: UILabel!
 }

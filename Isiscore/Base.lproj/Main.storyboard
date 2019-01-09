@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TTG-Kh-afn">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScoreCell" id="TTG-Kh-afn" customClass="ScoreCell" customModule="Isiscore" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TTG-Kh-afn" id="q8d-O6-5KX">
@@ -74,8 +74,8 @@
                                         <constraint firstItem="FX4-wN-LHC" firstAttribute="centerY" secondItem="q8d-O6-5KX" secondAttribute="centerY" id="Lz5-xs-uju"/>
                                         <constraint firstItem="IuL-GK-kK1" firstAttribute="baseline" secondItem="FX4-wN-LHC" secondAttribute="baseline" id="MEu-2M-i89"/>
                                         <constraint firstItem="FX4-wN-LHC" firstAttribute="baseline" secondItem="Jau-mO-Q2p" secondAttribute="baseline" id="MaE-kG-KWV"/>
+                                        <constraint firstItem="7Gf-XK-mim" firstAttribute="leading" secondItem="q8d-O6-5KX" secondAttribute="leading" constant="17.5" id="Nkv-Bz-3Hu"/>
                                         <constraint firstItem="P5s-td-RpI" firstAttribute="centerY" secondItem="q8d-O6-5KX" secondAttribute="centerY" id="SMA-bD-Leo"/>
-                                        <constraint firstItem="IuL-GK-kK1" firstAttribute="leading" secondItem="7Gf-XK-mim" secondAttribute="trailing" constant="23" id="XRu-EB-Agq"/>
                                         <constraint firstItem="CFO-cv-qd3" firstAttribute="leading" secondItem="FX4-wN-LHC" secondAttribute="trailing" constant="8" symbolic="YES" id="ag1-Og-Clk"/>
                                         <constraint firstItem="Jau-mO-Q2p" firstAttribute="leading" secondItem="FX4-wN-LHC" secondAttribute="trailing" id="g6v-3p-uje"/>
                                         <constraint firstItem="P5s-td-RpI" firstAttribute="centerY" secondItem="q8d-O6-5KX" secondAttribute="centerY" id="iOo-MN-boX"/>
@@ -85,6 +85,13 @@
                                         <constraint firstItem="IuL-GK-kK1" firstAttribute="centerY" secondItem="q8d-O6-5KX" secondAttribute="centerY" id="v81-Fk-eNY"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="awayTeam" destination="P5s-td-RpI" id="etQ-Mf-BlO"/>
+                                    <outlet property="awayTeamScore" destination="CFO-cv-qd3" id="upy-HJ-Pai"/>
+                                    <outlet property="currentTime" destination="7Gf-XK-mim" id="Z93-op-pR0"/>
+                                    <outlet property="homeTeam" destination="IuL-GK-kK1" id="5pN-ka-rfU"/>
+                                    <outlet property="homeTeamScore" destination="FX4-wN-LHC" id="IWP-k3-YmX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
