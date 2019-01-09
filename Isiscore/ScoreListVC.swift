@@ -9,36 +9,46 @@
 import Foundation
 import UIKit
 
-struct Game {
-    var currentTime: String
-    var homeTeam: String
-    var homeTeamScore: String
-    var awayTeamScore: String
-    var awayTeam: String
-    
-    init(currentTime: String, homeTeam: String, homeTeamScore: String, awayTeamScore: String, awayTeam:String) {
-        self.currentTime = currentTime
-        self.homeTeam = homeTeam
-        self.homeTeamScore = homeTeamScore
-        self.awayTeamScore = awayTeamScore
-        self.awayTeam = awayTeam
-    }
-    
-}
-
 class ScoreListVC: UITableViewController {
     
-    let game1: Game = Game(currentTime: "TER", homeTeam: "Clermont", homeTeamScore: "3", awayTeamScore: "0", awayTeam: "Tourcoing")
-    
-    let game2: Game = Game(currentTime: "66\'", homeTeam: "Lyon", homeTeamScore: "0", awayTeamScore: "4", awayTeam: "Saint-Etienne")
+    @IBOutlet var gamesTableView: UITableView!
     
     //Tableau en dur pour test
-    var games: [Game] = []
+    var games: [GameObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        games.append(game1)
-        games.append(game2)
+        
+        //Get data in JSON
+        if let url = URL(string: "https://api.myjson.com/bins/hmyao") {
+            //Background thread
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url)
+                
+                //Parse JSON
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let jsonObjectArray: [GameObject] = try jsonDecoder.decode([GameObject].self, from: data!)
+                    
+                    print("jsonObject : \(jsonObjectArray)")
+                    
+                    //Json mapping
+                    for g in jsonObjectArray {
+                        let game: GameObject = GameObject(currentTime: g.currentTime, homeTeam: g.homeTeam, homeTeamScore: g.homeTeamScore, awayTeamScore: g.awayTeamScore, awayTeam: g.awayTeam)
+                        self.games.append(game)
+                    }
+                    
+                } catch let error {
+                    print("Error : \(error)")
+                }
+                
+                //Main/UI thread
+                DispatchQueue.main.async {
+                    //UI modifications
+                    self.gamesTableView.reloadData()
+                }
+            }
+        }
     }
 
     // MARK: - Table View
@@ -48,8 +58,7 @@ class ScoreListVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-        //A remplacer par nombre de matchs
+        return games.count
     }
     
     override func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {

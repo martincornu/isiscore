@@ -100,6 +100,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="n8o-nD-2hT"/>
+                    <connections>
+                        <outlet property="gamesTableView" destination="JGT-1e-Gce" id="wh8-Jy-nvm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qi-PX-XoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

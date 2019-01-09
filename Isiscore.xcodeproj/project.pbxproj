@@ -15,6 +15,7 @@
 		0D99A6D421E5DA860082CC27 /* IsiscoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99A6D321E5DA860082CC27 /* IsiscoreUITests.swift */; };
 		0D99A6E221E5DE5E0082CC27 /* ScoreListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99A6E121E5DE5E0082CC27 /* ScoreListVC.swift */; };
 		0D99A6E421E5DFF90082CC27 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99A6E321E5DFF90082CC27 /* ScoreCell.swift */; };
+		0D99A6E621E5FDDD0082CC27 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99A6E521E5FDDD0082CC27 /* GameObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0D99A6D521E5DA860082CC27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D99A6E121E5DE5E0082CC27 /* ScoreListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreListVC.swift; sourceTree = "<group>"; };
 		0D99A6E321E5DFF90082CC27 /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
+		0D99A6E521E5FDDD0082CC27 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				0D99A6BF21E5DA860082CC27 /* Info.plist */,
 				0D99A6E121E5DE5E0082CC27 /* ScoreListVC.swift */,
 				0D99A6E321E5DFF90082CC27 /* ScoreCell.swift */,
+				0D99A6E521E5FDDD0082CC27 /* GameObject.swift */,
 			);
 			path = Isiscore;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D99A6E621E5FDDD0082CC27 /* GameObject.swift in Sources */,
 				0D99A6B421E5DA840082CC27 /* AppDelegate.swift in Sources */,
 				0D99A6E421E5DFF90082CC27 /* ScoreCell.swift in Sources */,
 				0D99A6E221E5DE5E0082CC27 /* ScoreListVC.swift in Sources */,
