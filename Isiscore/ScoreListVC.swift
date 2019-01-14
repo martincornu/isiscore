@@ -116,7 +116,7 @@ class ScoreListVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailsVC: DetailsVC! = self.storyboard?.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsVC
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ScoreCell", for: indexPath) as! ScoreCell
+        let cell = tableView.cellForRow(at: indexPath) as! ScoreCell
         
         detailsVC.homeTeamName = cell.homeTeam.text
         detailsVC.awayTeamName = cell.awayTeam.text
