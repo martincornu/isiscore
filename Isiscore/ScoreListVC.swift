@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 
 class ScoreListVC: UITableViewController {
+    
     private let refreshControlScore = UIRefreshControl()
+    var gamesNavigationController: UINavigationController?
+    
     @IBOutlet var gamesTableView: UITableView!
     
     //Store games from JSON
@@ -18,6 +21,10 @@ class ScoreListVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+            self.gamesNavigationController = navigationController
+        }
         
         let splashScreenVC: UIViewController! = self.storyboard?.instantiateViewController(withIdentifier: "SplashScreenVC")
         present(splashScreenVC, animated: true, completion: nil)
@@ -104,6 +111,17 @@ class ScoreListVC: UITableViewController {
         cell.awayTeam.text = game.awayTeam
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailsVC: DetailsVC! = self.storyboard?.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsVC
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ScoreCell", for: indexPath) as! ScoreCell
+        
+        detailsVC.homeTeamName = cell.homeTeam.text
+        detailsVC.awayTeamName = cell.awayTeam.text
+        
+        self.gamesNavigationController?.pushViewController(detailsVC, animated: true)
     }
     
 }

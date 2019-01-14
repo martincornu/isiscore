@@ -109,6 +109,73 @@
             </objects>
             <point key="canvasLocation" x="768.79999999999995" y="-215.44227886056973"/>
         </scene>
+        <!--DetailsVC-->
+        <scene sceneID="XIc-6e-OEe">
+            <objects>
+                <viewController storyboardIdentifier="DetailsVC" id="cVT-UY-qAz" customClass="DetailsVC" customModule="Isiscore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5nw-DH-GEG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6z-aq-7hP">
+                                <rect key="frame" x="16" y="20" width="343" height="205"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5m-vT-phm" userLabel="Home Team Name Label">
+                                        <rect key="frame" x="41" y="158" width="92" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Away Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrR-IK-CxA" userLabel="Away Team Name Label">
+                                        <rect key="frame" x="207" y="158" width="86" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dTf-kk-UPd">
+                                <rect key="frame" x="189" y="233" width="170" height="414"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0AL-lF-8rH">
+                                <rect key="frame" x="16" y="233" width="165" height="414"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="414" id="HVZ-Uu-b1s"/>
+                                    <constraint firstAttribute="width" constant="165" id="icA-Id-eJ5"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2VI-GP-y9z" firstAttribute="bottom" secondItem="dTf-kk-UPd" secondAttribute="bottom" constant="20" id="1EX-Ur-BEt"/>
+                            <constraint firstItem="2VI-GP-y9z" firstAttribute="bottom" secondItem="0AL-lF-8rH" secondAttribute="bottom" constant="20" id="8dK-oW-IbK"/>
+                            <constraint firstItem="2VI-GP-y9z" firstAttribute="trailing" secondItem="p6z-aq-7hP" secondAttribute="trailing" constant="16" id="LHx-AH-lSr"/>
+                            <constraint firstItem="2VI-GP-y9z" firstAttribute="trailing" secondItem="dTf-kk-UPd" secondAttribute="trailing" constant="16" id="M4q-In-Kcu"/>
+                            <constraint firstItem="p6z-aq-7hP" firstAttribute="leading" secondItem="2VI-GP-y9z" secondAttribute="leading" constant="16" id="OEA-iQ-Brl"/>
+                            <constraint firstItem="0AL-lF-8rH" firstAttribute="leading" secondItem="2VI-GP-y9z" secondAttribute="leading" constant="16" id="RUZ-99-dky"/>
+                            <constraint firstItem="p6z-aq-7hP" firstAttribute="top" secondItem="2VI-GP-y9z" secondAttribute="top" id="WsX-xl-NPX"/>
+                            <constraint firstItem="dTf-kk-UPd" firstAttribute="leading" secondItem="0AL-lF-8rH" secondAttribute="trailing" constant="8" id="Xtl-cK-WSc"/>
+                            <constraint firstItem="0AL-lF-8rH" firstAttribute="top" secondItem="p6z-aq-7hP" secondAttribute="bottom" constant="8" id="bkt-Kb-Ea5"/>
+                            <constraint firstItem="0AL-lF-8rH" firstAttribute="top" secondItem="p6z-aq-7hP" secondAttribute="bottom" constant="8" id="jkU-bN-K13"/>
+                            <constraint firstItem="dTf-kk-UPd" firstAttribute="leading" secondItem="0AL-lF-8rH" secondAttribute="trailing" constant="8" id="ke4-KS-Upu"/>
+                            <constraint firstItem="dTf-kk-UPd" firstAttribute="top" secondItem="p6z-aq-7hP" secondAttribute="bottom" constant="8" id="l91-Pi-6AE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2VI-GP-y9z"/>
+                    </view>
+                    <connections>
+                        <outlet property="awayTeamNameLabel" destination="zrR-IK-CxA" id="UrX-Ko-T10"/>
+                        <outlet property="homeTeamNameLabel" destination="z5m-vT-phm" id="K2Q-hF-ufH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3I5-LS-eec" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8" y="-214.54272863568218"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="nin-B1-08h">
             <objects>
@@ -146,7 +213,7 @@
         <!--Navigation Controller-->
         <scene sceneID="p4s-My-txU">
             <objects>
-                <navigationController id="kah-21-2Yg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="gamesNavigationVC" id="kah-21-2Yg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4cf-mz-rem">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
