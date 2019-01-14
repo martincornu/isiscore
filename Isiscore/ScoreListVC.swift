@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 class ScoreListVC: UITableViewController {
-    
+    private let refreshControlScore = UIRefreshControl()
     @IBOutlet var gamesTableView: UITableView!
     
-    //Tableau en dur pour test
+    //Store games from JSON
     var games: [GameObject] = []
     
     override func viewDidLoad() {
@@ -22,6 +22,24 @@ class ScoreListVC: UITableViewController {
         let splashScreenVC: UIViewController! = self.storyboard?.instantiateViewController(withIdentifier: "SplashScreenVC")
         present(splashScreenVC, animated: true, completion: nil)
         
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControlScore
+        } else {
+            tableView.addSubview(refreshControlScore)
+        }
+        refreshControl!.addTarget(self, action: #selector(refreshScoreData(_:splashScreenVC:)), for: .valueChanged)
+        
+        fetchScoreData(splashScreenVC: splashScreenVC)
+
+    }
+    
+    @objc private func refreshScoreData(_ sender: Any, splashScreenVC: UIViewController) {
+        // Fetch Score Data
+        fetchScoreData(splashScreenVC: splashScreenVC)
+    }
+    
+    func fetchScoreData(splashScreenVC: UIViewController) {
         //Get data in JSON
         if let url = URL(string: "https://api.myjson.com/bins/hmyao") {
             //Background thread
@@ -33,9 +51,8 @@ class ScoreListVC: UITableViewController {
                     let jsonDecoder = JSONDecoder()
                     let jsonObjectArray: [GameObject] = try jsonDecoder.decode([GameObject].self, from: data!)
                     
-                    print("jsonObject : \(jsonObjectArray)")
-                    
                     //Json mapping
+                    self.games.removeAll() //Clear array
                     for g in jsonObjectArray {
                         let game: GameObject = GameObject(currentTime: g.currentTime, homeTeam: g.homeTeam, homeTeamScore: g.homeTeamScore, awayTeamScore: g.awayTeamScore, awayTeam: g.awayTeam)
                         self.games.append(game)
@@ -49,7 +66,12 @@ class ScoreListVC: UITableViewController {
                 DispatchQueue.main.async {
                     //UI modifications
                     self.gamesTableView.reloadData()
-                    splashScreenVC.dismiss(animated: true, completion: nil)
+                    
+                    if let splashScreenVC = splashScreenVC as UIViewController? {
+                        splashScreenVC.dismiss(animated: true, completion: nil)
+                    }
+                    
+                    self.refreshControl!.endRefreshing()
                 }
             }
         }
