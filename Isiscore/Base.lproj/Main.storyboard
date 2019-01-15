@@ -205,6 +205,58 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bUE-hV-1TE">
                                 <rect key="frame" x="16" y="161" width="343" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iGL-dA-lQg">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iGL-dA-lQg" id="vRO-Ax-paB">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qr6-Df-ubH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="171.5" height="43"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90'" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMU-Us-bK0">
+                                                            <rect key="frame" x="8" y="12" width="22" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.13312977578955962" green="0.31117858293498468" blue="0.63042422279792754" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mitroglou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Y7-ap-WML">
+                                                            <rect key="frame" x="38" y="12" width="66" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="76t-2U-Cf4">
+                                                            <rect key="frame" x="140" y="8" width="23" height="27"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="27" id="ddb-yz-T91"/>
+                                                                <constraint firstAttribute="width" constant="23" id="jdb-60-joq"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="NMU-Us-bK0" firstAttribute="leading" secondItem="Qr6-Df-ubH" secondAttribute="leading" constant="8" id="OUi-iZ-IRT"/>
+                                                        <constraint firstAttribute="bottom" secondItem="76t-2U-Cf4" secondAttribute="bottom" constant="8" id="Qex-m9-5Eb"/>
+                                                        <constraint firstItem="NMU-Us-bK0" firstAttribute="top" secondItem="Qr6-Df-ubH" secondAttribute="top" constant="12" id="Wzp-3O-WJT"/>
+                                                        <constraint firstAttribute="height" constant="43" id="Yuf-X0-cMr"/>
+                                                        <constraint firstItem="76t-2U-Cf4" firstAttribute="top" secondItem="Qr6-Df-ubH" secondAttribute="top" constant="8" id="jKO-eH-kfV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="76t-2U-Cf4" secondAttribute="trailing" constant="8.5" id="qIy-Q1-7Wb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="NMU-Us-bK0" secondAttribute="bottom" constant="13" id="qNJ-ma-18l"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Qr6-Df-ubH" firstAttribute="leading" secondItem="vRO-Ax-paB" secondAttribute="leading" id="iUa-k8-3qn"/>
+                                                <constraint firstItem="Qr6-Df-ubH" firstAttribute="width" secondItem="vRO-Ax-paB" secondAttribute="width" multiplier="0.5" id="nUH-QO-daj"/>
+                                                <constraint firstItem="Qr6-Df-ubH" firstAttribute="top" secondItem="vRO-Ax-paB" secondAttribute="top" id="t3c-0F-iIg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -17,6 +17,8 @@
 		0D99A6E421E5DFF90082CC27 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99A6E321E5DFF90082CC27 /* ScoreCell.swift */; };
 		0D99A6E621E5FDDD0082CC27 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99A6E521E5FDDD0082CC27 /* GameObject.swift */; };
 		0DD92B1621ECC30700A2D6AD /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD92B1521ECC30700A2D6AD /* DetailsVC.swift */; };
+		0DFF9C2921EDD2DD00941165 /* homeTeamDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFF9C2821EDD2DD00941165 /* homeTeamDetailsCell.swift */; };
+		0DFF9C2B21EDD2EB00941165 /* awayTeamDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFF9C2A21EDD2EB00941165 /* awayTeamDetailsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		0D99A6E321E5DFF90082CC27 /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
 		0D99A6E521E5FDDD0082CC27 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		0DD92B1521ECC30700A2D6AD /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsVC.swift; path = /Users/macornu/Documents/Isiscore/Isiscore/Isiscore/DetailsVC.swift; sourceTree = "<absolute>"; };
+		0DFF9C2821EDD2DD00941165 /* homeTeamDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeTeamDetailsCell.swift; sourceTree = "<group>"; };
+		0DFF9C2A21EDD2EB00941165 /* awayTeamDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = awayTeamDetailsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				0D99A6E121E5DE5E0082CC27 /* ScoreListVC.swift */,
 				0D99A6E321E5DFF90082CC27 /* ScoreCell.swift */,
 				0D99A6E521E5FDDD0082CC27 /* GameObject.swift */,
+				0DFF9C2821EDD2DD00941165 /* homeTeamDetailsCell.swift */,
+				0DFF9C2A21EDD2EB00941165 /* awayTeamDetailsCell.swift */,
 			);
 			path = Isiscore;
 			sourceTree = "<group>";
@@ -268,7 +274,9 @@
 				0D99A6E621E5FDDD0082CC27 /* GameObject.swift in Sources */,
 				0D99A6B421E5DA840082CC27 /* AppDelegate.swift in Sources */,
 				0D99A6E421E5DFF90082CC27 /* ScoreCell.swift in Sources */,
+				0DFF9C2B21EDD2EB00941165 /* awayTeamDetailsCell.swift in Sources */,
 				0D99A6E221E5DE5E0082CC27 /* ScoreListVC.swift in Sources */,
+				0DFF9C2921EDD2DD00941165 /* homeTeamDetailsCell.swift in Sources */,
 				0DD92B1621ECC30700A2D6AD /* DetailsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
