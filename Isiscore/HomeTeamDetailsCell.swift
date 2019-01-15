@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
-class homeTeamDetailsCell: UITableViewCell {
+class HomeTeamDetailsCell: UITableViewCell {
     //Outlets
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var playerLabel: UILabel!
+    @IBOutlet weak var actionImageView: UIImageView!
 }
