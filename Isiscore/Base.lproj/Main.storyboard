@@ -343,8 +343,13 @@
                         <viewLayoutGuide key="safeArea" id="2VI-GP-y9z"/>
                     </view>
                     <connections>
+                        <outlet property="awayBadgeImageView" destination="SYe-Ft-VQq" id="JA4-jv-WzS"/>
+                        <outlet property="awayScoreLabel" destination="K0G-tH-yAC" id="uxU-cX-NDj"/>
                         <outlet property="awayTeamNameLabel" destination="zrR-IK-CxA" id="UrX-Ko-T10"/>
+                        <outlet property="currentTimeLabel" destination="YHt-nm-6Tq" id="9r6-vN-md1"/>
                         <outlet property="gameDetailsTableView" destination="bUE-hV-1TE" id="Nmt-V0-iHM"/>
+                        <outlet property="homeBadgeImageView" destination="lSP-rd-TBV" id="rbT-Cl-eFM"/>
+                        <outlet property="homeScoreLabel" destination="hOj-Kq-G6w" id="hoB-2H-i64"/>
                         <outlet property="homeTeamNameLabel" destination="z5m-vT-phm" id="K2Q-hF-ufH"/>
                     </connections>
                 </viewController>

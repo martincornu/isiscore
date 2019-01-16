@@ -14,6 +14,12 @@ class DetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     @IBOutlet weak var homeTeamNameLabel: UILabel!
     @IBOutlet weak var awayTeamNameLabel: UILabel!
     @IBOutlet weak var gameDetailsTableView: UITableView!
+    @IBOutlet weak var homeBadgeImageView: UIImageView!
+    @IBOutlet weak var awayBadgeImageView: UIImageView!
+    @IBOutlet weak var currentTimeLabel: UILabel!
+    @IBOutlet weak var homeScoreLabel: UILabel!
+    @IBOutlet weak var awayScoreLabel: UILabel!
+    
     
     var gameObject: GameObject?
     var homeActions: [ActionObject]?
@@ -34,7 +40,12 @@ class DetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     func updateUI() {
         self.homeTeamNameLabel.text = gameObject?.homeTeam
         self.awayTeamNameLabel.text = gameObject?.awayTeam
-
+        self.homeBadgeImageView.image = UIImage(named: (self.gameObject?.homeTeam)!)
+        self.awayBadgeImageView.image = UIImage(named: (self.gameObject?.awayTeam)!)
+        self.currentTimeLabel.text = gameObject?.currentTime
+        self.homeScoreLabel.text = gameObject?.homeTeamScore
+        self.awayScoreLabel.text = gameObject?.awayTeamScore
+        
         self.gameDetailsTableView.reloadData()
     }
     
