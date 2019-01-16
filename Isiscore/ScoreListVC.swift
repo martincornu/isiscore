@@ -18,6 +18,8 @@ class ScoreListVC: UITableViewController {
     
     //Store games from JSON
     var games: [GameObject] = []
+    var homeActions: [ActionObject] = []
+    var awayActions: [ActionObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +50,7 @@ class ScoreListVC: UITableViewController {
     
     func fetchScoreData(splashScreenVC: UIViewController) {
         //Get data in JSON
-        if let url = URL(string: "https://api.myjson.com/bins/hmyao") {
+        if let url = URL(string: "https://api.myjson.com/bins/qsaus") {
             //Background thread
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url)
@@ -61,7 +63,19 @@ class ScoreListVC: UITableViewController {
                     //Json mapping
                     self.games.removeAll() //Clear array
                     for g in jsonObjectArray {
-                        let game: GameObject = GameObject(currentTime: g.currentTime, homeTeam: g.homeTeam, homeTeamScore: g.homeTeamScore, awayTeamScore: g.awayTeamScore, awayTeam: g.awayTeam)
+                        let game: GameObject = GameObject(currentTime: g.currentTime, homeTeam: g.homeTeam, homeTeamScore: g.homeTeamScore, awayTeamScore: g.awayTeamScore, awayTeam: g.awayTeam, homeAction: g.homeAction, awayAction: g.awayAction)
+                        
+                        self.homeActions.removeAll() //Clear array
+                        for homeA in g.homeAction {
+                            let homeAction: ActionObject = ActionObject(minute: homeA.minute, player: homeA.player, action: homeA.action, team: homeA.team)
+                            self.homeActions.append(homeAction)
+                        }
+                        self.awayActions.removeAll() //Clear array
+                        for awayA in g.awayAction {
+                            let awayAction: ActionObject = ActionObject(minute: awayA.minute, player: awayA.player, action: awayA.action, team: awayA.team)
+                            self.awayActions.append(awayAction)
+                        }
+                        
                         self.games.append(game)
                     }
                     
@@ -116,10 +130,8 @@ class ScoreListVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailsVC: DetailsVC! = self.storyboard?.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsVC
         
-        let cell = tableView.cellForRow(at: indexPath) as! ScoreCell
-        
-        detailsVC.homeTeamName = cell.homeTeam.text
-        detailsVC.awayTeamName = cell.awayTeam.text
+        let game = games[indexPath.row]
+        detailsVC.gameObject = game
         
         self.gamesNavigationController?.pushViewController(detailsVC, animated: true)
     }

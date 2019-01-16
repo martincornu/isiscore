@@ -15,20 +15,26 @@ class DetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     @IBOutlet weak var awayTeamNameLabel: UILabel!
     @IBOutlet weak var gameDetailsTableView: UITableView!
     
-    var homeTeamName: String?
-    var awayTeamName: String?
+    var gameObject: GameObject?
+    var homeActions: [ActionObject]?
+    var awayActions: [ActionObject]?
+    var allActions: [ActionObject]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.homeActions = self.gameObject?.homeAction
+        self.awayActions = self.gameObject?.awayAction
+        self.allActions = self.homeActions! + self.awayActions!
+        self.allActions?.sort(by: { $0.minute > $1.minute })
+        
         updateUI()
     }
     
     func updateUI() {
-        self.homeTeamNameLabel.text = homeTeamName
-        self.awayTeamNameLabel.text = awayTeamName
-        
-        let indexPath = IndexPath(row: 0, section: 0)
-        gameDetailsTableView.insertRows(at: [indexPath], with: .automatic)
+        self.homeTeamNameLabel.text = gameObject?.homeTeam
+        self.awayTeamNameLabel.text = gameObject?.awayTeam
+
         self.gameDetailsTableView.reloadData()
     }
     
@@ -39,7 +45,13 @@ class DetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        var nbActions: Int = 0
+        
+        if let actions = self.allActions as [ActionObject]? {
+            nbActions = actions.count
+        }
+        
+        return nbActions
     }
     
     func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
@@ -49,24 +61,24 @@ class DetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
+        let action: ActionObject = self.allActions![indexPath.row]
+        
+        if action.team == "home" {
             let homeCell = tableView.dequeueReusableCell(withIdentifier: "homeTeamDetailsCell", for: indexPath) as! HomeTeamDetailsCell
             
-            //let game = games[indexPath.row]
+            homeCell.timeLabel.text = action.minute
+            homeCell.playerLabel.text = action.player
+            homeCell.actionImageView.image = UIImage(named: (action.action))
             
-            homeCell.timeLabel.text = "45'"
-            homeCell.playerLabel.text = "Germain"
-            homeCell.actionImageView.image = UIImage(named: "asse")
             return homeCell
         }
         else {
             let awayCell = tableView.dequeueReusableCell(withIdentifier: "awayTeamDetailsCell", for: indexPath) as! AwayTeamDetailsCell
             
-            //let game = games[indexPath.row]
+            awayCell.timeLabel.text = action.minute
+            awayCell.playerLabel.text = action.player
+            awayCell.actionImageView.image = UIImage(named: (action.action))
             
-            awayCell.timeLabel.text = "60'"
-            awayCell.playerLabel.text = "Balmont"
-            awayCell.actionImageView.image = UIImage(named: "lyon")
             return awayCell
         }
     }
