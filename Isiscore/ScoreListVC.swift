@@ -50,7 +50,7 @@ class ScoreListVC: UITableViewController {
     
     func fetchScoreData(splashScreenVC: UIViewController) {
         //Get data in JSON
-        if let url = URL(string: "https://api.myjson.com/bins/qsaus") {
+        if let url = URL(string: "https://api.myjson.com/bins/18u6os") {
             //Background thread
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url)
@@ -134,6 +134,20 @@ class ScoreListVC: UITableViewController {
         detailsVC.gameObject = game
         
         self.gamesNavigationController?.pushViewController(detailsVC, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            games.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
     }
     
 }

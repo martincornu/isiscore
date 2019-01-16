@@ -77,7 +77,7 @@ class DetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         if action.team == "home" {
             let homeCell = tableView.dequeueReusableCell(withIdentifier: "homeTeamDetailsCell", for: indexPath) as! HomeTeamDetailsCell
             
-            homeCell.timeLabel.text = action.minute
+            homeCell.timeLabel.text = "\(action.minute)'"
             homeCell.playerLabel.text = action.player
             homeCell.actionImageView.image = UIImage(named: (action.action))
             
@@ -86,7 +86,7 @@ class DetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         else {
             let awayCell = tableView.dequeueReusableCell(withIdentifier: "awayTeamDetailsCell", for: indexPath) as! AwayTeamDetailsCell
             
-            awayCell.timeLabel.text = action.minute
+            awayCell.timeLabel.text = "\(action.minute)'"
             awayCell.playerLabel.text = action.player
             awayCell.actionImageView.image = UIImage(named: (action.action))
             

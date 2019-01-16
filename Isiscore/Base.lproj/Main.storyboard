@@ -10,17 +10,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Résultats-->
         <scene sceneID="wGV-sI-N0L">
             <objects>
-                <tableViewController id="9vo-lh-bmr" customClass="ScoreListVC" customModule="Isiscore" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Résultats" id="9vo-lh-bmr" customClass="ScoreListVC" customModule="Isiscore" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JGT-1e-Gce">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="3wz-gT-8vy">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="France" translatesAutoresizingMaskIntoConstraints="NO" id="3ba-tS-wwe">
+                                    <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="France - Ligue 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJT-xs-Dwc">
+                                    <rect key="frame" x="46" y="13" width="121" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.13312977579999999" green="0.3111785829" blue="0.63042422279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScoreCell" id="TTG-Kh-afn" customClass="ScoreCell" customModule="Isiscore" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TTG-Kh-afn" id="q8d-O6-5KX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -100,7 +118,7 @@
                             <outlet property="delegate" destination="9vo-lh-bmr" id="4zp-R6-sNm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="n8o-nD-2hT"/>
+                    <navigationItem key="navigationItem" title="Résultats" id="n8o-nD-2hT"/>
                     <connections>
                         <outlet property="gamesTableView" destination="JGT-1e-Gce" id="wh8-Jy-nvm"/>
                     </connections>
@@ -229,11 +247,11 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="76t-2U-Cf4">
-                                                            <rect key="frame" x="140" y="8" width="23" height="27"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="yellowcard" translatesAutoresizingMaskIntoConstraints="NO" id="76t-2U-Cf4">
+                                                            <rect key="frame" x="140" y="8" width="27" height="27"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="27" id="ddb-yz-T91"/>
-                                                                <constraint firstAttribute="width" constant="23" id="jdb-60-joq"/>
+                                                                <constraint firstAttribute="width" constant="27" id="jdb-60-joq"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
@@ -277,19 +295,19 @@
                                                             <color key="textColor" red="0.13312977579999999" green="0.3111785829" blue="0.63042422279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MU8-5N-ptW">
-                                                            <rect key="frame" x="0.0" y="8" width="23" height="27"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="27" id="KGX-hD-nVb"/>
-                                                                <constraint firstAttribute="width" constant="23" id="ztA-lk-sV7"/>
-                                                            </constraints>
-                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mitroglou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Eq-Mg-lSw">
                                                             <rect key="frame" x="67" y="12" width="66" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goal" translatesAutoresizingMaskIntoConstraints="NO" id="MU8-5N-ptW">
+                                                            <rect key="frame" x="0.0" y="8" width="27" height="27"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="27" id="KGX-hD-nVb"/>
+                                                                <constraint firstAttribute="width" constant="27" id="ztA-lk-sV7"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -409,8 +427,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="France" width="409.60000610351562" height="409.60000610351562"/>
         <image name="asse" width="749" height="1024"/>
+        <image name="goal" width="409.60000610351562" height="409.60000610351562"/>
         <image name="lyon" width="888" height="1024"/>
         <image name="splashImage" width="640" height="1136"/>
+        <image name="yellowcard" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
 </document>
